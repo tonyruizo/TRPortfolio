@@ -1,0 +1,12 @@
+<div class="row pt-2">
+    <div class="col pt-lg-3 pt-5">
+        <NavLink href="@Link" class="back-btn d-flex">
+            <i class="bi bi-arrow-left-square-fill" style="color:var(--secondary-color)"></i>
+            <p>&nbsp;Back</p>
+        </NavLink>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Link { get; set; } = "/";
+}
