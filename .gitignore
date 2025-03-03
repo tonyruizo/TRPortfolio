@@ -1,0 +1,33 @@
+# .NET Core build folders
+bin/
+obj/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Common node modules locations
+/node_modules
+/wwwroot/node_modules
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# IDE
+.idea/
+.vs/
+.DS_Store
+
+# temp
+TRPortfolio.Client/wwwroot/gif

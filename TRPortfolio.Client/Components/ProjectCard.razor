@@ -1,0 +1,28 @@
+<div class="col-lg-6 col-md-12 py-1">
+
+    <div class="project-card" @onclick="ViewProject">
+        <strong>@Title</strong>
+        <div class="image-container">
+            <img src="@Source"
+                 alt="@Alt">
+            <div class="overlay">@Text</div>
+        </div>
+    </div>
+
+</div>
+
+@code {
+    [Parameter] public required string ProjectId { get; set; }
+    [Parameter] public string Title { get; set; } = "Coming soon";
+    [Parameter] public string Source { get; set; } = "images/placeholder-image.webp";
+    [Parameter] public string Alt { get; set; } = "Image placeholder";
+    [Parameter] public string Text { get; set; } = "Coming soon";
+
+    [Inject] public required NavigationManager Navigation { get; set; }
+
+    private void ViewProject()
+    {
+        Navigation.NavigateTo($"/projects/{ProjectId}");
+    }
+
+}

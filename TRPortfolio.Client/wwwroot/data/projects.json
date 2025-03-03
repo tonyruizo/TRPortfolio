@@ -1,0 +1,22 @@
+[
+  {
+    "Slug": "taniti-tourism",
+    "Title": "Taniti Tourism",
+    "ImageUrl": "gif/taniti-tourism-preview.gif",
+    "ImageUrlMobile": "gif/taniti-tourism-mobile.gif",
+    "Description": "This project was developed for a User Experience Design class. It includes a component-based, single-page application (SPA) UI approach using Blazor's client-side rendering with WebAssembly. Utilized Azure Static Web Apps resource for deployment, and GitHub Actions for CI/CD.",
+    "ProjectTools": "C#, .NET 8, Blazor WebAssembly",
+    "ProjectLink": "https://wonderful-flower-0665c7b1e.6.azurestaticapps.net/",
+    "RepoLink": "https://github.com/tonyruizo/TanitiTourism"
+  },
+  {
+    "Slug": "another-project",
+    "Title": "Another Project",
+    "ImageUrl": "images/AnotherProject.png",
+    "ImageUrlMobile": "gif/another.gif",
+    "Description": "A description of another cool project.",
+    "ProjectTools": "C#, .NET 8, Blazor WebAssembly",
+    "ProjectLink": "/",
+    "RepoLink": "Private Repo (Unavailable)"
+  }
+]

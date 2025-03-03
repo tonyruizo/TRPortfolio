@@ -1,0 +1,104 @@
+@page "/projects/{ProjectId}"
+@using TRPortfolio.Client.Components
+@inject NavigationManager Navigation
+@inject HttpClient Http
+
+<PageTitle>Tonyruizo.me - Projects - @_project?.Title</PageTitle>
+
+@if (_project == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="container">
+
+        <PageHeading Heading="Project Details"/>
+
+        <div class="row">
+
+            <div class="col-lg-6 col-md-12 pt-3">
+                <div class="project-img-container">
+                    <img src="@_project.ImageUrl" alt="Project desktop preview" gif-style/>
+                </div>
+                <em>Desktop View</em>
+            </div>
+
+            <div class="col-lg-6 col-md-12 pt-3">
+                <div class="project-img-container">
+                    <img src="@_project.ImageUrlMobile" alt="Project mobile preview" gif-style/>
+                </div>
+                <em>Mobile View</em>
+            </div>
+
+        </div>
+
+        @* Description *@
+        <div class="row pt-5">
+            <div class="col-lg-6 col-md-12">
+                <h2>@_project.Title</h2>
+                <p>@_project.Description</p>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <p><strong>Tech Stack:</strong> @_project.ProjectTools</p>
+                <div class="project-links pt-3">
+                    <a href="@_project.RepoLink" target="_blank">
+                        <button class="btn-second">
+                            Repo Link <i class="bi bi-github"></i>
+                        </button>
+                    </a>
+                    <a href="@_project.ProjectLink" target="_blank">
+                        <button class="btn-main">View Live <i class="bi bi-globe"></i></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col pt-lg-3 pt-5">
+                <NavLink href="/projects" class="back-btn d-flex">
+                    <i class="bi bi-arrow-left-square-fill" style="color:var(--secondary-color)"></i>
+                    <p>&nbsp;Back</p>
+                </NavLink>
+            </div>
+
+        </div>
+    </div>
+
+    @code {
+        [Parameter] public string ProjectId { get; set; } = string.Empty;
+
+        private Project? _project;
+        private List<Project>? _allProjects;
+
+        protected override async Task OnInitializedAsync()
+        {
+            // Fetch data from a JSON projects file
+            _allProjects = await Http.GetFromJsonAsync<List<Project>>("data/projects.json");
+
+            if (_allProjects != null)
+            {
+                _project = _allProjects.FirstOrDefault(p => p.Slug == ProjectId.ToLower());
+
+                if (_project == null)
+                {
+                    Navigation.NavigateTo("/projects"); // Redirect if project is not found
+                }
+            }
+        }
+
+        public class Project
+        {
+            public string Slug { get; set; } = string.Empty;
+            public string Title { get; set; } = "Project Title";
+            public string ImageUrl { get; set; } = string.Empty;
+            public string ImageUrlMobile { get; set; } = string.Empty;
+            public string Description { get; set; } = string.Empty;
+            public string ProjectTools { get; set; } = string.Empty;
+            public string ProjectLink { get; set; } = string.Empty;
+            public string RepoLink { get; set; } = string.Empty;
+        }
+
+    }
+
+}

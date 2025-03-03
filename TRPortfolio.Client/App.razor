@@ -1,0 +1,14 @@
+﻿@using TRPortfolio.Client.Components
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
+        <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <PageHeading Heading="Oops!"></PageHeading>
+            <p role="alert">Sorry, this page does not exist.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
