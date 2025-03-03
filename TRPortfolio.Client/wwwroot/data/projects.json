@@ -2,8 +2,10 @@
   {
     "Slug": "taniti-tourism",
     "Title": "Taniti Tourism",
-    "ImageUrl": "gif/taniti-tourism-preview.gif",
-    "ImageUrlMobile": "gif/taniti-tourism-mobile.gif",
+    "WebmDesktop": "gif/taniti/taniti-tourism-desktop.webm",
+    "WebmMobile": "gif/taniti/taniti-tourism-mobile.webm",
+    "Mp4Desktop": "gif/taniti/taniti-tourism-desktop.mp4",
+    "Mp4Mobile": "gif/taniti/taniti-tourism-mobile.mp4",
     "Description": "This project was developed for a User Experience Design class. It includes a component-based, single-page application (SPA) UI approach using Blazor's client-side rendering with WebAssembly. Utilized Azure Static Web Apps resource for deployment, and GitHub Actions for CI/CD.",
     "ProjectTools": "C#, .NET 8, Blazor WebAssembly",
     "ProjectLink": "https://wonderful-flower-0665c7b1e.6.azurestaticapps.net/",

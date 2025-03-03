@@ -18,15 +18,23 @@ else
         <div class="row">
 
             <div class="col-lg-6 col-md-12 pt-3">
-                <div class="project-img-container">
-                    <img src="@_project.ImageUrl" alt="Project desktop preview" gif-style/>
+                <div class="project-gif-container">
+                    <video autoplay muted loop playsinline>
+                        <source src="@_project.WebmDesktop" type="video/webm">
+                        @* Fallback: For browsers that do not support webm *@
+                        <source src="@_project.WebmMobile" type="video/mp4"> 
+                    </video>
                 </div>
                 <em>Desktop View</em>
             </div>
 
             <div class="col-lg-6 col-md-12 pt-3">
-                <div class="project-img-container">
-                    <img src="@_project.ImageUrlMobile" alt="Project mobile preview" gif-style/>
+                <div class="project-gif-container">
+                    <video autoplay muted loop playsinline>
+                        <source src="@_project.WebmMobile" type="video/webm">
+                        @* Fallback: For browsers that do not support webm *@
+                        <source src="@_project.Mp4Mobile" type="video/mp4">
+                    </video>
                 </div>
                 <em>Mobile View</em>
             </div>
@@ -91,8 +99,10 @@ else
         {
             public string Slug { get; set; } = string.Empty;
             public string Title { get; set; } = "Project Title";
-            public string ImageUrl { get; set; } = string.Empty;
-            public string ImageUrlMobile { get; set; } = string.Empty;
+            public string WebmDesktop { get; set; } = string.Empty;
+            public string WebmMobile { get; set; } = string.Empty;
+            public string Mp4Desktop { get; set; } = string.Empty;
+            public string Mp4Mobile { get; set; } = string.Empty;
             public string Description { get; set; } = string.Empty;
             public string ProjectTools { get; set; } = string.Empty;
             public string ProjectLink { get; set; } = string.Empty;
