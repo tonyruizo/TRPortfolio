@@ -12,7 +12,7 @@ public class Program
         builder.RootComponents.Add<HeadOutlet>("head::after");
 
         // Ensure production mode
-        if (!builder.HostEnvironment.IsDevelopment()) Console.WriteLine("Running in Production mode");
+        if (builder.HostEnvironment.IsDevelopment()) Console.WriteLine("Running in Dev mode");
         // Optional: Add other production-specific services
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
