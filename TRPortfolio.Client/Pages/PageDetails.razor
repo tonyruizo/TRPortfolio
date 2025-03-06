@@ -52,12 +52,10 @@ else
                 <div class="project-links pt-3">
                     @if (_project.RepoLink == "Private-repo")
                     {
-                        <a href="/projects/{@_project.Slug}">
-                            <button class="btn-second disabled"
-                                    title="This repository is private and cannot be accessed">
-                                Private Repo <i class="bi bi-ban"></i>
-                            </button>
-                        </a>
+                        <button class="btn-second disabled"
+                                title="This repository is private and cannot be accessed">
+                            Private Repo <i class="bi bi-ban"></i>
+                        </button>
                     }
                     else
                     {
