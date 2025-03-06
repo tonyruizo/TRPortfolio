@@ -13,3 +13,8 @@
     border-radius: 5px;
 }
 
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
