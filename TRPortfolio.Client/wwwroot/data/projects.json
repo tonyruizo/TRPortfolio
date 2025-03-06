@@ -12,13 +12,27 @@
     "RepoLink": "https://github.com/tonyruizo/TanitiTourism"
   },
   {
-    "Slug": "another-project",
-    "Title": "Another Project",
-    "ImageUrl": "images/AnotherProject.png",
-    "ImageUrlMobile": "gif/another.gif",
-    "Description": "A description of another cool project.",
-    "ProjectTools": "C#, .NET 8, Blazor WebAssembly",
-    "ProjectLink": "/",
-    "RepoLink": "Private Repo (Unavailable)"
+    "Slug": "snapflash",
+    "Title": "SnapFlash Photo Booths",
+    "WebmDesktop": "gif/snapflash/snapflash-desktop.webm",
+    "WebmMobile": "gif/snapflash/snapflash-mobile.webm",
+    "Mp4Desktop": "gif/snapflash/snapflash-desktop.mp4",
+    "Mp4Mobile": "gif/snapflash/snapflash-mobile.mp4",
+    "Description": "Details coming soon.",
+    "ProjectTools": "JavaScript, React.js Library, Node.js, Stripe Payment API",
+    "ProjectLink": "https://witty-cliff-05e1a1c0f.5.azurestaticapps.net/",
+    "RepoLink": "Private-repo"
+  },
+  {
+    "Slug": "tyco",
+    "Title": "TYCO Heating & Air",
+    "WebmDesktop": "",
+    "WebmMobile": "",
+    "Mp4Desktop": "",
+    "Mp4Mobile": "",
+    "Description": "Details coming soon.",
+    "ProjectTools": "",
+    "ProjectLink": "",
+    "RepoLink": "Private-repo"
   }
 ]

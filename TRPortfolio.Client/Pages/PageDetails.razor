@@ -22,7 +22,7 @@ else
                     <video autoplay muted loop playsinline>
                         <source src="@_project.WebmDesktop" type="video/webm">
                         @* Fallback: For browsers that do not support webm *@
-                        <source src="@_project.WebmMobile" type="video/mp4"> 
+                        <source src="@_project.Mp4Desktop" type="video/mp4">
                     </video>
                 </div>
                 <em>Desktop View</em>
@@ -50,20 +50,32 @@ else
             <div class="col-lg-6 col-md-12">
                 <p><strong>Tech Stack:</strong> @_project.ProjectTools</p>
                 <div class="project-links pt-3">
-                    <a href="@_project.RepoLink" target="_blank">
-                        <button class="btn-second">
-                            Repo Link <i class="bi bi-github"></i>
-                        </button>
-                    </a>
-                    <a href="@_project.ProjectLink" target="_blank">
+                    @if (_project.RepoLink == "Private-repo")
+                    {
+                        <a href="/projects/{@_project.Slug}">
+                            <button class="btn-second">
+                                Private Repo <i class="bi bi-github"></i>
+                            </button>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@_project.RepoLink" target="_blank">
+                            <button class="btn-second">
+                                Repo Link <i class="bi bi-github"></i>
+                            </button>
+                        </a>
+                    }
+
+                    <a href="@_project.ProjectLink" class="mx-1" target="_blank">
                         <button class="btn-main">View Live <i class="bi bi-globe"></i></button>
                     </a>
                 </div>
             </div>
         </div>
-        
+
         <BackButton Link="/projects"/>
-        
+
     </div>
 
     @code {
