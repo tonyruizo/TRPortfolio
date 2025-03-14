@@ -9,18 +9,55 @@ a {
 
 article {
     min-height: 90vh;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: inherit;
+    color: inherit;
 }
 
 :root {
-
     --primary-color: #8d9fb1;
     --link-text-hover: #706e6e;
-
     --secondary-color: #263a60;
+
+    --light-text: #b8b8c6;
+}
+
+/* Light mode */
+[data-bs-theme="light"] main {
+    background-color: #ffffff;
+    color: #212529;
+    --primary-color: #8d9fb1;
+    --secondary-color: #263a60;
+    --link-text-hover: #706e6e;
+}
+
+/* Dark mode */
+[data-bs-theme="dark"] main {
+    background-color: #212529;
+    color: var(--light-text);
+    --primary-color: #a3bffa;
+    --secondary-color: #4b5e8a;
+    --link-text-hover: #ced4da;
 }
 
 h1 {
     font-size: 1.7rem;
+}
+
+[data-bs-theme="light"] h1 {
+    color: #000000;
+}
+
+[data-bs-theme="light"] h2 {
+    color: #000000;
+}
+
+[data-bs-theme="dark"] h1 {
+    color: #e6e5e5;
+}
+
+[data-bs-theme="dark"] h2 {
+    color: #e6e5e5;
 }
 
 h2 {
@@ -59,6 +96,24 @@ h1:focus {
     background-color: var(--secondary-color);
     color: white;
     border: none;
+}
+
+[data-bs-theme="dark"] .btn-main {
+    color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .btn-main:hover {
+    background-color: #f8f9fa;
+    color: var(--secondary-color);
+}
+
+[data-bs-theme="dark"] .btn-second {
+    background-color: #343a40;
+    color: var(--light-text);
+}
+
+[data-bs-theme="dark"] .btn-second:hover {
+    color: #f8f9fa;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {

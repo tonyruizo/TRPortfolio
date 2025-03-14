@@ -1,0 +1,38 @@
+@inject IJSRuntime JsRuntime
+
+<div class="theme-toggler py-2 px-lg-5 px-3 d-flex justify-content-end">
+    <div class="theme-btn" type="button"
+         @onclick="ToggleTheme">
+        @((MarkupString)(CurrentTheme == Theme.Dark ? "<i class='bi bi-sun'></i>" : "<i class='bi bi-moon'></i>"))
+    </div>
+</div>
+
+
+@code {
+
+    private enum Theme
+    {
+        Light,
+        Dark
+    }
+
+    private Theme CurrentTheme { get; set; } = Theme.Dark;
+
+    private async Task ToggleTheme()
+    {
+        CurrentTheme = CurrentTheme == Theme.Light ? Theme.Dark : Theme.Light;
+        await UpdateTheme();
+    }
+
+    private async Task UpdateTheme()
+    {
+        var themeValue = CurrentTheme == Theme.Dark ? "dark" : "light";
+        await JsRuntime.InvokeVoidAsync("document.documentElement.setAttribute", "data-bs-theme", themeValue);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await UpdateTheme();
+    }
+
+}

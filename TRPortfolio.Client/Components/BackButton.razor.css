@@ -2,3 +2,8 @@
     font-size: 1.1rem;
     color: black;
 }
+
+
+[data-bs-theme="dark"] .back-btn p, .back-btn i {
+    color: var(--light-text);
+}

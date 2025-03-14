@@ -1,0 +1,13 @@
+.theme-toggler {
+    background-color: rgba(149, 159, 177, 0.08);
+}
+
+.theme-btn {
+    padding: 0.5rem 0.8rem;
+    color: var(--primary-color);
+    border: none;
+}
+
+[data-bs-theme="light"] .theme-btn {
+    color: var(--secondary-color);
+}

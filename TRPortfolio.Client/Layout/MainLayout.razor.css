@@ -30,6 +30,10 @@ main {
     z-index: -1;
 }
 
+[data-bs-theme="dark"] .sidebar-layover {
+    background: linear-gradient(125deg, #212529 1%, #000 100%), linear-gradient(125deg, #ffffff 1%, #212529 100%);
+}
+
 @media (max-width: 640.98px) {
     .top-row {
         justify-content: space-between;

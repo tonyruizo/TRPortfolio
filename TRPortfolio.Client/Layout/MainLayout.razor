@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using TRPortfolio.Client.Components
+@inherits LayoutComponentBase
+
 <div class="page">
     <div class="sidebar">
         <div class="sidebar-layover"></div>
@@ -6,6 +8,7 @@
     </div>
 
     <main>
+        <ThemeToggle/>
         <article class="content px-md-5 px-0">
             <div class="pt-5">
                 @Body
